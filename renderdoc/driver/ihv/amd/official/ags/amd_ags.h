@@ -105,8 +105,8 @@
 #define AMD_AGS_H
 
 #define AMD_AGS_VERSION_MAJOR 6             ///< AGS major version
-#define AMD_AGS_VERSION_MINOR 0             ///< AGS minor version
-#define AMD_AGS_VERSION_PATCH 1             ///< AGS patch version
+#define AMD_AGS_VERSION_MINOR 3             ///< AGS minor version
+#define AMD_AGS_VERSION_PATCH 0             ///< AGS patch version
 
 #ifdef __cplusplus
 extern "C" {
