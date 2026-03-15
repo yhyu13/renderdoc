@@ -4793,17 +4793,19 @@ RDResult D3D12_CreateReplayDevice(RDCFile *rdc, const ReplayOptions &opts, IRepl
 
   if(agsDev)
   {
-    if(!agsDev->ExtensionsSupported())
-    {
-      SAFE_RELEASE(dev);
-      SAFE_RELEASE(nvapiDev);
-      SAFE_RELEASE(factory);
-      SAFE_DELETE(rgp);
-      RETURN_ERROR_RESULT(
-          ResultCode::APIHardwareUnsupported,
-          "This capture needs AGS extensions to replay, but device selected for replay can't "
-          "support AGS extensions");
-    }
+    // YuHang : AGS extension support is not implemented in this renderdoc version when AGS dll can be loaded
+    // So disable extension support check
+    //if(!agsDev->ExtensionsSupported())
+    //{
+    //  SAFE_RELEASE(dev);
+    //  SAFE_RELEASE(nvapiDev);
+    //  SAFE_RELEASE(factory);
+    //  SAFE_DELETE(rgp);
+    //  RETURN_ERROR_RESULT(
+    //      ResultCode::APIHardwareUnsupported,
+    //      "This capture needs AGS extensions to replay, but device selected for replay can't "
+    //      "support AGS extensions");
+    //}
   }
 
   NVAftermath_EnableD3D12(dev);
